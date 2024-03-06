@@ -482,8 +482,9 @@ namespace ODEditor
 
                     ordinal++;
 
-                    if (bitoff >= 64) {
-                        MessageBox.Show(string.Format("Invalid TXPDO mapping parameters in 0x{0:X}. Trying to map more than 64 bit (8 Bytes). CAN message maximum lenght is 8 Byte", slot.ConfigurationIndex));
+                    if (bitoff > 64) {
+                        MessageBox.Show(string.Format("Invalid {0}XPDO mapping parameters in 0x{1:X}. Trying to map more than 64 bit (8 Bytes). CAN message maximum length is 8 Bytes",
+                            slot.isTXPDO() ? "T" : "R", slot.ConfigurationIndex));
                         break;
                     }
 

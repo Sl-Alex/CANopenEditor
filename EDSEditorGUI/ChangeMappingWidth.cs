@@ -53,5 +53,17 @@ namespace ODEditor
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void ChangeMappingWidth_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.button_ok_Click(null, null);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.button_cancel_Click(null, null);
+            }
+        }
     }
 }

@@ -69,6 +69,7 @@
             // 
             // button_ok
             // 
+            this.button_ok.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button_ok.Location = new System.Drawing.Point(12, 57);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(130, 37);
@@ -79,6 +80,7 @@
             // 
             // button_cancel
             // 
+            this.button_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button_cancel.Location = new System.Drawing.Point(183, 57);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(130, 37);
@@ -97,8 +99,10 @@
             this.Controls.Add(this.updown_newwidth);
             this.Controls.Add(this.label_enterwidth);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "ChangeMappingWidth";
             this.Text = "Change mapping width";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangeMappingWidth_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.updown_newwidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
